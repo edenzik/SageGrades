@@ -47,6 +47,6 @@ Which should work without opening a Firefox window.
 
 ## Upload to Simplenote
 
-If you use [Simplenote](simplenote.com), as I do, you can configure a job to automatically check Sage for you and update your grades in a note on your phone/computer.
+If you use [Simplenote](http://www.simplenote.com), as I do, you can configure a job to automatically check Sage for you and update your grades in a note on your phone/computer.
 
 Simply override your username and password, and use note_setup to set up the grades note and get its ID, which you then put in the note_sync file.
