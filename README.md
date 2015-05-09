@@ -23,3 +23,15 @@ After about a minute, your grades will be printed. By default, these are the gra
 
 - 0 = newest semester (if !senior, the one you finished registering for)
 - 1 = most recent completed semester (probably the one you have new grades for)
+
+## Run headless
+
+To run this without having it open your browser, or altenrtively, to run it in a machine without a screen through a termianl, I referred to [this](http://elementalselenium.com/tips/38-headless) tutorial. The gist is that you need to install the `xvfb` utility, on Apt:
+
+    sudo apt-get install xvfb
+    
+This can be followed by exeucting the script in the python environment using `xvfb`:
+    
+    xvfb-run python sage.py
+    
+Which should work without opening a Firefox window.
