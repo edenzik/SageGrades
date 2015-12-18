@@ -26,6 +26,9 @@ def grades_note_update(note_id):
 if __name__ == '__main__':
     note_id = grades_note_setup()
     while True:
-        grades_note_update(note_id)
+	try:
+		grades_note_update(note_id)
+	except:
+		print "Failed, will retry"
         time.sleep(REFRESH_TIME)
 

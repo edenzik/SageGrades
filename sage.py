@@ -16,7 +16,7 @@ SPEED_CONSTANT = 5                      #Number of seconds to wait for page redi
 def get_grades():
     #Setup
 
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
 
     #Sage Login Page
 
