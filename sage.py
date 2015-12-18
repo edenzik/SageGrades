@@ -5,16 +5,18 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import time
+import sys
+import os
 
-BRANDEIS_ID = '????' #Your Brandeis username (keep safe!)
-BRANDEIS_PASSWORD = '?????'     #Your Brandeis password (keep safe!)
-SEMESTER = 1                            #Semester count from the most recent (0th semester is the most recent one after registration, 1st is the one before that, etc.)
+BRANDEIS_ID = os.environ['BRANDEIS_ID'] #Your Brandeis username from environment variable
+BRANDEIS_PASSWORD = os.environ['BRANDEIS_PASSWORD']     #Your Brandeis password from environment variable
+SEMESTER = 0                            #Semester count from the most recent (0th semester is the most recent one after registration, 1st is the one before that, etc.)
 SPEED_CONSTANT = 5                      #Number of seconds to wait for page redirection
 
 def get_grades():
     #Setup
 
-    browser = webdriver.Firefox()
+    browser = webdriver.Chrome()
 
     #Sage Login Page
 
@@ -45,14 +47,16 @@ def get_grades():
         #Going to schedule
         schdl.click()
 
+        #Frame switch to context frame
+
+        time.sleep(SPEED_CONSTANT)
+
+        browser.switch_to_frame('TargetContent')
+
     except:
         print "Page failed to load, try increasing your speed constant"
         return
 
-    #Frame switch to context frame
-
-
-    browser.switch_to_frame('TargetContent')
 
     #Gets semester list of inputs
 
