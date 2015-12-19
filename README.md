@@ -31,7 +31,7 @@ After about a minute, your grades will be printed:
 	COSI 146A - PRINC. OF COMP. SYSTEM DESIGN                    : ?
 	THA 15B - PUBLIC SPEAKING                                    : ?
 
-By default, these are the grades for the most recent semester on your "Class Schedule". However, you can retrieve earlier grades by chaining the `SEMESTER` constant to a larger one in the source file. For seniors in their last semester -> 0, else 1.
+By default, these are the grades for the most recent semester on your "Class Schedule". However, you can retrieve earlier grades by changing the `SEMESTER` constant to a larger one in the source file. For seniors in their last semester -> 0, else 1.
 
 - 0 = newest semester (if !senior, the one you finished registering for)
 - 1 = most recent completed semester (probably the one you have new grades for)
