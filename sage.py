@@ -12,11 +12,16 @@ BRANDEIS_ID = os.environ['BRANDEIS_ID'] #Your Brandeis username from environment
 BRANDEIS_PASSWORD = os.environ['BRANDEIS_PASSWORD']     #Your Brandeis password from environment variable
 SEMESTER = 0                            #Semester count from the most recent (0th semester is the most recent one after registration, 1st is the one before that, etc.)
 SPEED_CONSTANT = 5                      #Number of seconds to wait for page redirection
+HEADLESS = True
 
 def get_grades():
     #Setup
 
-    browser = webdriver.Firefox()
+    if HEADLESS:
+        dirname, filename = os.path.split(os.path.abspath(__file__))
+        browser = webdriver.PhantomJS(dirname + '/phantomjs')
+    else:
+        browser = webdriver.Firefox()
 
     #Sage Login Page
 
